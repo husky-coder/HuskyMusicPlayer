@@ -34,6 +34,7 @@ public class KaraokeActivity extends AppCompatActivity {
 
     private String original = "狂浪-原唱.mp3";   // 原唱
     private String music = "狂浪-伴唱.mp3";      // 伴唱
+    private String zrce = "狂浪.zrce";           // 歌词
 //    private String original = "5d4e894aa559b3272a8707a27b3b2323.mp3";   // 原唱
 //    private String music = "fd0e957aa8025da1755c7ffe657ae752.mp3";      // 伴唱
 
@@ -116,6 +117,8 @@ public class KaraokeActivity extends AppCompatActivity {
                 StorageUtil.getExternalFilesDir(this, null) + File.separator + original);
         Utils.copyFileToSdcard(this, music,
                 StorageUtil.getExternalFilesDir(this, null) + File.separator + music);
+        Utils.copyFileToSdcard(this, zrce,
+                StorageUtil.getExternalFilesDir(this, null) + File.separator + zrce);
     }
 
     public void start(View view) {
