@@ -97,7 +97,7 @@ public class AudioChannelAsync {
         @Override
         public void onInputBufferAvailable(@NonNull MediaCodec codec, int index) {
             Log.d(TAG, audioDecoder + ">>onInputBufferAvailable-->");
-            if (index > 0) {
+            if (index >= 0) {
                 ByteBuffer inputBuffer = audioDecoder.getInputBuffer(index); // api >= 21
                 if (inputBuffer != null) {
                     inputBuffer.clear();

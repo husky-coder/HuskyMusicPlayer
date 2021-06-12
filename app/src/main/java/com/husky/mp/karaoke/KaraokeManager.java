@@ -115,6 +115,8 @@ public class KaraokeManager {
                     mediaFormat = mediaExtractor1.getTrackFormat(i);
                     String mime = mediaFormat.getString(MediaFormat.KEY_MIME);    // 获取媒体类型
                     if (mime != null && mime.startsWith("audio")) { // 找到音频轨道
+                        Log.d(TAG, "audio.rate = " + mediaFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE));
+                        Log.d(TAG, "audio.channel = " + mediaFormat.getInteger(MediaFormat.KEY_CHANNEL_COUNT));
                         break;
                     }
                 }

@@ -35,8 +35,10 @@ public class KaraokeActivity extends AppCompatActivity {
     private String original = "狂浪-原唱.mp3";   // 原唱
     private String music = "狂浪-伴唱.mp3";      // 伴唱
     private String zrce = "狂浪.zrce";           // 歌词
-//    private String original = "5d4e894aa559b3272a8707a27b3b2323.mp3";   // 原唱
+    //    private String original = "5d4e894aa559b3272a8707a27b3b2323.mp3";   // 原唱
 //    private String music = "fd0e957aa8025da1755c7ffe657ae752.mp3";      // 伴唱
+//    private String originalPcm = "originalPcm.pcm";      // 伴唱
+//    private String musicPcm = "musicPcm.pcm";      // 伴唱
 
     private KaraokeManager karaokeManager;
 
@@ -128,10 +130,11 @@ public class KaraokeActivity extends AppCompatActivity {
                     StorageUtil.getExternalFilesDir(this, null) + File.separator + original,
                     StorageUtil.getExternalFilesDir(this, null) + File.separator + music);
 
-//            karaokeManager.setPCMPath("", "");
             karaokeManager.setOnPrepareListener(new KaraokeManager.OnPrepareListener() {
                 @Override
                 public void onPrepared() {
+//                    karaokeManager.setPCMPath(StorageUtil.getExternalFilesDir(KaraokeActivity.this, null) + File.separator + originalPcm,
+//                            StorageUtil.getExternalFilesDir(KaraokeActivity.this, null) + File.separator + musicPcm);
                     karaokeManager.start();
                 }
             });
